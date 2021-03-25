@@ -34,13 +34,13 @@
 	3. Or start **Application.class** as java application within an IDE
 	4. Result in the console: A big *Micronaut* writing and 'Server Running: http://localhost:8080' at the end.
 5. <strong>Calling http://localhost:8080 from browser or CLI</strong>
-	6. `curl localhost:8080/action`
-	7. Call http://localhost:8080/action from browser
-	8. Result at the console: 'Still some more java code necessary to do fancy stuff'
+	1. `curl localhost:8080/action`
+	2. Call http://localhost:8080/action from browser
+	3. Result at the console: 'Still some more java code necessary to do fancy stuff'
 6. <strong>Adding *MicroStream* dependencies to pom.xml</strong>
-	7. Getting dependencies from https://manual.docs.microstream.one/data-store/getting-started
-	8. Open pom.xml
-	9. Adding following dependencies to the dependency section of pom.xml
+	1. Getting dependencies from https://manual.docs.microstream.one/data-store/getting-started
+	2. Open pom.xml
+	3. Adding following dependencies to the dependency section of pom.xml
 
 ```xml
 	<dependency>
