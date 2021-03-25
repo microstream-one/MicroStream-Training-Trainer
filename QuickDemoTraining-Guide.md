@@ -19,12 +19,12 @@
 <h3>Training</h3>
 
 1. <strong>Explanation about the training</strong>
-	1. Needed preparations see above
-	2. Duration of the unit
-	3. Targets of the unit
+	1. Needed preparations see above.
+	2. Duration of the unit - 30 Minutes
+	3. Targets of the unit, see targets above.
 2. <strong>Explanation about the project</strong>
-	1. Micronaut project
-	2. One action controller class to do the "magic"
+	1. Micronaut project to simulate writing maschine data to a *MicroStream* database
+	2. One action controller class with a service to do the "magic"
 3. <strong>Clone the project from repository see link above</strong>
 	1. `$ git clone https://github.com/microstream-one/microstream-quick-demo.git`
 	2. Or using the GIT functionality of an IDE
@@ -84,7 +84,7 @@
 public class Application
 {
 	public static EmbeddedStorageManager	storageManager;
-	public static List<Instant>				instants	= new ArrayList<>();
+	public static List<Instant>		instants	= new ArrayList<>();
 	
 	public static void main(String[] args)
 	{
