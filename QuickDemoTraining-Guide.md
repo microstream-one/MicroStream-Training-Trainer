@@ -4,7 +4,6 @@
 
 1. Participants should see how easy the usage of MicroStream can be.
 2. Should see the basic architecture of MicroStream
-3. 
 
 <h3>Needed preparations</h3>
 
@@ -42,14 +41,70 @@
 	7. Getting dependencies from https://manual.docs.microstream.one/data-store/getting-started
 	8. Open pom.xml
 	9. Adding following dependencies to the dependency section of pom.xml
- ```xml
-<dependency>
-	<groupId>one.microstream</groupId>
-	<artifactId>storage.embedded</artifactId>
-	<version>04.01.00-MS-GA</version>
-</dependency>
-<dependency>
-	<groupId>one.microstream</groupId>
-	<artifactId>storage.embedded.configuration</artifactId>
-	<version>04.01.00-MS-GA</version>
-</dependency>```
+
+```xml
+	<dependency>
+		<groupId>one.microstream</groupId>
+		<artifactId>storage.embedded</artifactId>
+		<version>04.01.00-MS-GA</version>
+	</dependency>
+	<dependency>
+		<groupId>one.microstream</groupId>
+		<artifactId>storage.embedded.configuration</artifactId>
+		<version>04.01.00-MS-GA</version>
+	</dependency>
+```
+7. Adding *MicroStream* repository to pom.xml
+	8. Getting Repository from https://manual.docs.microstream.one/data-store/getting-started
+	9. Adding following repository to repository section in pom.xml
+
+```xml
+	<repository>
+		<id>microstream-releases</id>
+		<url>
+			https://repo.microstream.one/repository/maven-releases/
+		</url>
+	</repository>
+``` 
+8. Creating an *EmbeddedStorageManager* initializing of the MicroStream database
+	1. Switch to Application.class
+	2. Adding the following attribute: 
+		1. `public static EmbeddedStorageManager	storageManager;`
+	3. Adding the following attribute: 
+		1. `public static List<Instant>				instants	= new ArrayList<>();`
+	4. Instantiating the attribut in main: 
+		1. `storageManager = EmbeddedStorage.start(instants);`
+	5. Store the added root
+		1. `storageManager.storeRoot();`
+	6. Add a *System.out.println* for short information after startup
+		1. `System.out.println(instants.size() + " entries in the database");` 
+	7. In the end the Application.class should look like this:
+
+```java
+public class Application
+{
+	
+	public static EmbeddedStorageManager	storageManager;
+	public static List<Instant>				instants	= new ArrayList<>();
+	
+	public static void main(String[] args)
+	{
+		Micronaut.run(Application.class, args);
+		
+		storageManager = EmbeddedStorage.start(instants);
+		storageManager.storeRoot();
+		
+		System.out.println(instants.size() + " entries in the database");
+	}
+}
+```
+
+9. Adding some action code to write data to the database
+	1.  Adding the following lines of code to action service in *ActionController.class*:
+```java
+IntStream.rangeClosed(1, 50).forEach(i ->
+{
+	Application.instants.add(Instant.now().plusSeconds(i));
+});	
+Application.storageManager.store(Application.instants);
+```
