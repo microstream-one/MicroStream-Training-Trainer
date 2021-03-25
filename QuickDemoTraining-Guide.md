@@ -78,7 +78,7 @@
 		1. `storageManager.storeRoot();`
 	6. Add a *System.out.println* for short information after startup
 		1. `System.out.println(instants.size() + " entries in the database");` 
-	7. In the end the Application.class should look like this:
+	7. In the end the *Application.class* should look like this:
 
 ```java
 public class Application
