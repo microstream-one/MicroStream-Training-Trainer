@@ -38,3 +38,15 @@
 	6. `curl localhost:8080/action`
 	7. Call http://localhost:8080/action from browser
 	8. Result at the console: 'Still some more java code necessary to do fancy stuff'
+
+ ````xml
+	<dependency>
+		<groupId>one.microstream</groupId>
+		<artifactId>storage.embedded</artifactId>
+		<version>04.01.00-MS-GA</version>
+	</dependency>
+	<dependency>
+		<groupId>one.microstream</groupId>
+		<artifactId>storage.embedded.configuration</artifactId>
+		<version>04.01.00-MS-GA</version>
+	</dependency>````
