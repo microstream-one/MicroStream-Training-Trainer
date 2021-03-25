@@ -38,7 +38,7 @@
 	6. `curl localhost:8080/action`
 	7. Call http://localhost:8080/action from browser
 	8. Result at the console: 'Still some more java code necessary to do fancy stuff'
-6. **Adding *MicroStream* dependencies to pom.xml**
+6. <strong>Adding *MicroStream* dependencies to pom.xml</strong>
 	7. Getting dependencies from https://manual.docs.microstream.one/data-store/getting-started
 	8. Open pom.xml
 	9. Adding following dependencies to the dependency section of pom.xml
