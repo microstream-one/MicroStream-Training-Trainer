@@ -83,7 +83,6 @@
 ```java
 public class Application
 {
-	
 	public static EmbeddedStorageManager	storageManager;
 	public static List<Instant>				instants	= new ArrayList<>();
 	
